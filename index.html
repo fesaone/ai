@@ -1,0 +1,273 @@
+
+<!DOCTYPE html>
+<html lang="id" class="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel='dns-prefetch' href='//cdnjs.cloudflare.com' />
+<!-- Basic Meta -->
+<title>Fesaone AI | Asisten Virtual Kreatif Indonesia</title>
+<meta name="title" content="Fesaone AI | Asisten Virtual Kreatif Indonesia">
+<meta name="description" content="Fesaone AI adalah asisten virtual berbasis kecerdasan buatan buatan Indonesia yang membantu ide kreatif, jawaban akurat, dan produktivitas harian Anda.">
+<meta name="robots" content="index, follow">
+<meta name="language" content="id-ID">
+<meta name="author" content="Fauzi Eka Suryana">
+<link rel="canonical" href="https://ai.fesa.one/">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="https://assets.fesa.one/images/logoblack.png" sizes="1200x1200" />
+<link rel="apple-touch-icon" href="https://assets.fesa.one/images/logoblack.png" />
+<meta name="msapplication-TileImage" content="https://assets.fesa.one/images/logoblack.png" />
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ai.fesa.one/">
+<meta property="og:title" content="Fesaone AI – Asisten AI Kreatif Buatan Indonesia">
+<meta property="og:description" content="Asisten AI adaptif untuk ide, eksplorasi kreatif, dan produktivitas digital harian.">
+<meta property="og:image" content="https://assets.fesa.one/images/og-image-ai.jpg">
+<meta property="og:locale" content="id_ID">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://ai.fesa.one/">
+<meta name="twitter:title" content="Fesaone AI | AI Lokal untuk Ide & Produktivitas">
+<meta name="twitter:description" content="AI buatan Indonesia untuk membantu ide kreatif, jawaban cepat, dan produktivitas harian.">
+<meta name="twitter:image" content="https://assets.fesa.one/images/og-image-fesaone-ai.jpg">
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Fesaone AI",
+  "url": "https://ai.fesa.one/",
+  "description": "Asisten virtual berbasis kecerdasan buatan buatan Indonesia yang membantu ide kreatif, jawaban akurat, dan produktivitas harian.",
+  "applicationCategory": "ProductivityApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "softwareVersion": "1.0",
+  "inLanguage": "id-ID",
+  "featureList": [
+    "Chat AI Bahasa Indonesia",
+    "Asisten ide kreatif",
+    "Pemahaman konteks pengguna",
+    "Produktivitas harian"
+  ],
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "IDR",
+    "availability": "https://schema.org/InStock",
+    "url": "https://ai.fesa.one/"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Fauzi Eka Suryana",
+    "url": "https://ai.fesa.one/",
+    "jobTitle": "Developer & Tech Lead",
+    "sameAs": [
+      "https://instagram.com/fesaonedev",
+      "https://linkedin.com/in/fesaonedev"
+    ]
+  },
+  "creator": {
+    "@type": "Organization",
+    "name": "Fesaone Dev",
+    "url": "https://ai.fesa.one/"
+  }
+}
+</script>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        background: '#050505', 
+                        foreground: '#ededed',
+                        muted: '#171717',
+                        border: '#262626',
+                    },
+                    animation: { 'fade-in-up': 'fadeInUp 0.5s ease-out forwards' },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #000; color: #ededed; -webkit-font-smoothing: antialiased; overflow: hidden; }
+        header, main, .input-area { position: relative; z-index: 10; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        .typing-cursor::after {
+            content: '▋'; display: inline-block; vertical-align: middle;
+            animation: blink 1s step-start infinite; color: white; margin-left: 2px; font-size: 0.8em;
+        }
+        @keyframes blink { 50% { opacity: 0; } }
+
+        .glass-effect {
+            background: rgba(5, 5, 5, 0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+        }
+
+        #chat-form {
+            background: linear-gradient(90deg, #000, #0a0a0a, #141414, #1e1e1e, #141414, #000);
+            background-size: 200% 200%; background-position: left center; padding: 1px;
+            border-radius: 9999px; transition: background-position 0.5s ease, box-shadow 0.3s ease;
+        }
+        #chat-form:focus-within {
+            background-position: right center; box-shadow: 0 0 25px #ffffff10; transition: all 0.3s ease;
+        }
+
+        #placeholder {
+            background: linear-gradient(145deg, #fafafa, #a1a1a1, #0a0a0a, #a1a1a1, #fafafa);
+            background-size: 200% 100%; -webkit-background-clip: text;
+            animation: gradientMove 3s linear infinite; user-select: none;
+        }
+        @keyframes gradientMove { from { background-position: 200% 0%;} }
+        
+        /* Markdown simple styling for AI response */
+        .ai-text-content code { background: #222; padding: 2px 5px; rounded: 4px; font-family: monospace; color: #ef4444; }
+        .ai-text-content pre { background: #111; padding: 10px; border-radius: 8px; overflow-x: auto; margin: 10px 0; border: 1px solid #333; }
+        .ai-text-content pre code { color: #ccc; background: transparent; padding: 0; }
+
+        .xbg {
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            z-index: 9;
+            opacity: 0.5;
+            background: linear-gradient(145deg, transparent 60%, #11111199, #22222295, #33333390, #44444485, #55555580);
+            mix-blend-mode:difference;
+            animation: xbg 20s ease-in-out infinite;
+        }
+        @keyframes xbg {
+            0%, 10%, 90%, 100%  { opacity: 0;}
+            10%, 90% { opacity: 0.5;}
+        }
+        #text-ai {
+            transform: scale(0.85);
+            user-select: none;
+            pointer-events: none;
+        }
+        @media (max-width: 448px) {
+            #pintasan {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                white-space: nowrap;
+            }
+            #share {display: none;}
+            #text-ai {
+                transform: scale(0.83);
+            }
+        }
+    </style>
+</head>
+<body class="h-screen w-full flex flex-col selection:bg-white selection:text-black">
+    <div class="xbg"></div>
+    <header class="fixed top-0 w-full border-b border-neutral-900 glass-effect transition-all duration-300 z-50">
+        <div class="max-w-4xl mx-auto px-4 h-14 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded flex items-center justify-center bg-neutral-900/50 backdrop-blur-md bg-gradient-to-br bg-radial-[at_25%_25%] from-neutral-950 to-zinc-900/50 to-75%">
+                    <img src="https://assets.fesa.one/images/logo.png" alt="FESA.one Logo">
+                </div>
+                <a class="font-bold text-white tracking-tight" href="https://fesa.one"><span class="font-bold text-white tracking-tight">FESA<span class="text-slate-300">.one</span></span></a>
+                <span id="text-ai" class="text-[12px] bg-slate-300 hover:bg-slate-50 px-2 py-1 rounded text-black font-bold tracking-wide">Ai</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <button id="share" class="flex items-center gap-2 px-3 py-1.5 text-xs font-medium text-gray-400 hover:text-white hover:bg-neutral-700/10 rounded transition"><i class="fa-solid fa-arrow-up-from-bracket"></i> Share</button>
+                <button class="flex items-center px-2 py-1.5 text-xs font-medium text-gray-400 hover:text-white hover:bg-neutral-700/10 rounded transition">Free</button>
+                <button class="flex items-center gap-2 px-3 py-1.5 text-xs font-medium text-white rounded shadow-lg transition bg-[#ffffff1a] hover:bg-white hover:text-black hover:shadow-[0_0_0_1px_#2e2e2e]"><i class="fa-solid fa-gem"></i> Upgrade Pro</button>
+            </div>
+        </div>
+    </header>
+
+    <main id="chat-container" class="flex-1 overflow-y-auto w-full max-w-4xl mx-auto pt-20 pb-32 px-4 no-scrollbar scroll-smooth z-20">
+        
+        <div class="flex flex-col items-center justify-center h-[60vh] text-center animate-fade-in-up" id="welcome-screen">
+            <div class="w-16 h-16 bg-neutral-900/50 backdrop-blur-md rounded-lg border border-white/10 flex items-center justify-center mb-6 shadow-2xl shadow-white/5 z-20 bg-gradient-to-br bg-radial-[at_25%_25%] from-neutral-950 to-zinc-900/50 to-75%">
+                <img src="https://assets.fesa.one/images/logo.png" alt="LOGO FESA ONE">
+            </div>
+            <h1 class="text-3xl font-bold mb-3 tracking-tight bg-gradient-to-b from-white to-neutral-500 bg-clip-text text-transparent">
+                Hai, saya Ai Fesaone
+            </h1>
+            <p class="text-neutral-500 max-w-md text-sm leading-relaxed">
+                Mulailah percakapan dan temukan jawaban instan.
+            </p>
+            <div id="pintasan" class="flex flex-row items-center justify-between gap-3 mt-4">
+                <button id="btn-study" class="flex items-center gap-2 px-3 py-1.5 text-xs font-medium text-neutral-400 border border-neutral-800 rounded-full transition hover:text-neutral-200 hover:border-neutral-700 hover:bg-neutral-700/30">
+                    <i class="fa-solid fa-medal"></i>Studi dan belajar
+                </button>
+                <button id="btn-code" class="flex items-center gap-2 px-3 py-1.5 text-xs font-medium text-neutral-400 border border-neutral-800 rounded-full transition hover:text-neutral-200 hover:border-neutral-700 hover:bg-neutral-700/30">
+                    <i class="fa-solid fa-lightbulb"></i>Berpikir dalam
+                </button>
+                <button id="btn-research" class="flex items-center gap-2 px-3 py-1.5 text-xs font-medium text-neutral-400 border border-neutral-800 rounded-full transition hover:text-neutral-200 hover:border-neutral-700 hover:bg-neutral-700/30">
+                    <i class="fa-solid fa-code-branch"></i>Deep Research
+                </button>
+            </div>
+        </div>
+
+        <div id="messages-wrapper" class="space-y-6 hidden"></div>
+        
+        <div id="loading-indicator" class="hidden pl-2 pt-2">
+            <div class="flex items-center gap-1">
+                <span class="w-1.5 h-1.5 bg-neutral-500 rounded-full animate-bounce"></span>
+                <span class="w-1.5 h-1.5 bg-neutral-500 rounded-full animate-bounce delay-75"></span>
+                <span class="w-1.5 h-1.5 bg-neutral-500 rounded-full animate-bounce delay-150"></span>
+            </div>
+        </div>
+    </main>
+
+    <div class="input-area fixed bottom-0 w-full bg-gradient-to-t from-background via-background/90 to-transparent pt-10 pb-4 z-20">
+        <div class="max-w-3xl mx-auto px-4">
+            
+            <form id="chat-form" class="relative group">
+                <div class="relative flex items-center bg-[#0a0a0a]/80 backdrop-blur-xl border border-zinc-200/10 rounded-full px-4 py-3 transition-all duration-300 focus-within:border-zinc-800/30 focus-within:shadow-[0_0_20px_rgba(255,255,255,0.05)]">
+                    
+                    <button type="button" id="voice-btn" class="p-2 mr-2 text-neutral-400 hover:text-white transition-colors rounded-full hover:bg-white/10 focus:outline-none">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                            <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                            <line x1="12" y1="19" x2="12" y2="23"></line>
+                        </svg>
+                    </button>
+
+                    <div class="relative w-full flex items-center">
+                        <input type="text" id="user-input" class="flex-1 bg-transparent text-white placeholder-neutral-50/0 focus:placeholder-neutral-500 focus:outline-none text-sm md:text-base" placeholder="Tanyakan apa saja" autocomplete="off">
+                        <span id="placeholder" class="flex w-full absolute inset-0 pointer-events-none text-sm md:text-base text-transparent">Tanyakan apa saja</span>
+                    </div>
+                    
+                    <button type="submit" id="send-btn" class="ml-2 p-2 bg-white text-black rounded-full hover:bg-neutral-200 transition-colors">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                    </button>
+                </div>
+            </form>
+
+            <div class="flex justify-center items-center gap-4 mt-4 text-[11px] text-neutral-600 font-medium">
+                <a href="#" class="hover:text-neutral-400 transition-colors">Terms of Service</a>
+                <span class="text-neutral-800">•</span>
+                <a href="#" class="hover:text-neutral-400 transition-colors">Privacy Policy</a>
+                <span class="text-neutral-800">•</span>
+                <a href="#" class="hover:text-neutral-400 transition-colors">Contact Us</a>
+            </div>
+        </div>
+    </div>
+    <script src="https://assets.fesa.one/js/ai.js"></script>
+    <script src="https://assets.fesa.one/js/cosmosCanvas.js"></script>
+</body>
+</html>
