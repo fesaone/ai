@@ -79,30 +79,33 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Inter', 'sans-serif'] },
-                    colors: {
-                        background: '#050505', 
-                        foreground: '#ededed',
-                        muted: '#171717',
-                        border: '#262626',
-                    },
-                    animation: { 'fade-in-up': 'fadeInUp 0.5s ease-out forwards' },
-                    keyframes: {
-                        fadeInUp: {
-                            '0%': { opacity: '0', transform: 'translateY(10px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<style type="text/tailwindcss">
+    @theme {
+        /* 1. Definisikan Font Family */
+        --font-family-sans: 'Inter', sans-serif;
+
+        /* 2. Definisikan Warna Custom */
+        --color-background: #050505;
+        --color-foreground: #ededed;
+        --color-muted: #171717;
+        --color-border: #262626;
+    }
+
+    /* 3. Definisikan Animasi Custom */
+    @keyframes fadeInUp {
+        0% { opacity: 0; transform: translateY(10px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* 4. Buat Class Utility untuk Animasi */
+    .animate-fade-in-up {
+        animation: fadeInUp 0.5s ease-out forwards;
+    }
+    
+    /* Opsi: Dark Mode base (jika ingin selalu dark mode secara default) */
+    /* @variant dark (&:where(.dark, .dark *)) { ... } */
+</style>
 
     <style>
         body { background-color: #000; color: #ededed; -webkit-font-smoothing: antialiased; overflow: hidden; }
