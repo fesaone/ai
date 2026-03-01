@@ -69,52 +69,36 @@
     }
     }
     </script>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: { 
-                        sans: ['Inter', 'system-ui', 'sans-serif']
-                    },
-                    colors: {
-                        background: '#050505', 
-                        foreground: '#ededed',
-                        muted: '#171717',
-                        border: '#262626',
-                    },
-                    animation: { 
-                        'fade-in-up': 'fadeInUp 0.5s ease-out forwards' 
-                    },
-                    keyframes: {
-                        fadeInUp: {
-                            '0%': { opacity: '0', transform: 'translateY(10px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <script>
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            document.documentElement.classList.add('dark')
-        }
-    </script>
     <style type="text/tailwindcss">
-        /* 5. Layer Base untuk styling dasar (Menghindari FOUT) */
-        @layer base {
-            body {
-                @apply bg-background text-foreground font-sans antialiased;
-            }
+        @theme {
+            --font-sans: "Inter", sans-serif;
+            --color-background: #050505;
+            --color-foreground: #ededed;
+            --color-muted: #171717;
+            --color-border: #262626;
+        }
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(10px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.5s ease-out forwards;
         }
     </style>
     <style>
+        * {
+            transition-duration: 0ms;
+        }
+        button {
+            background: revert-layer;
+        }
+        header img { max-width: 32px; }
+        #chat-container img { max-width: 62px; }
         body { background-color: #000; color: #ededed; -webkit-font-smoothing: antialiased; overflow: hidden; }
         header, main, .input-area { position: relative; z-index: 10; }
         .no-scrollbar::-webkit-scrollbar { display: none; }
