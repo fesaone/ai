@@ -2,7 +2,7 @@
 const knowledgeMap = [
     {
         keys: ["siapa", "pembuat", "creator", "author", "kamu", "identitas", "fauzi", "pengembang", "founder", "dev", "owner", "kapan", "dibuat", "tahun", "tanggal", "rilis", "lahir", "sejarah", "dari", "mana", "asal", "lokasi", "domisili", "tentang", "fesabot", "fesaone"],
-        response: "**Fesaone AI** dikembangkan oleh **Fauzi Eka Suryana** di Bandung, Indonesia (Januari 2026).\n\nBeliau adalah Developer, UI/UX Designer, dan Pro Gamer yang memulai karir sejak 2019. Saat ini aktif sebagai Tech Lead untuk teknologi livestreaming di *Radar Bandung* dan *R Media*."
+        response: "**FESA ONE AI** dikembangkan oleh **Fauzi Eka Suryana** di Bandung, Indonesia (Januari 2026)."
     },
     {
         keys: ["kontak", "email", "hubungi", "call", "tanya", "admin", "telepon", "nomor", "hp", "no", "whatsapp", "wa", "instagram", "ig", "sosmed", "social", "media", "twitter", "linkedin"],
@@ -18,7 +18,7 @@ const knowledgeMap = [
     }
 ];
 
-const SYSTEM_PROMPT = "You are Fesaone AI (fesa.one), created by Fauzi Eka Suryana (Bandung, ID). He is a Dev/Designer & Tech Lead at R Media/Radar Bandung. Be helpful, concise, and polite in Indonesian.";
+const SYSTEM_PROMPT = "You are FESA ONE AI, a virtual assistant that prioritizes clarity, efficiency, and concrete solutions. Responses must be well-structured, direct to the point, and free from unnecessary explanations. Focus on actionable steps that can be implemented immediately. Use clear, straightforward language while maintaining a professional tone.";
 let chatHistory = []; 
 
 /* --- DOM ELEMENTS --- */
