@@ -42,7 +42,7 @@ async function checkSafety(prompt, apiKey) {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        model: "meta-llama/llama-guard-4-12b",
+        model: "llama-3.1-8b-instant",
         messages: [{ role: "user", content: prompt }],
         temperature: 0,
         max_tokens: 32,
@@ -67,7 +67,7 @@ async function getChatCompletion(userMessage, history, apiKey) {
   const recentHistory = (history || []).slice(-10); 
 
   const messagesToSend = [
-    { role: "system", content: "You are Fesaone AI (fesa.one), created by Fauzi Eka Suryana (Bandung, ID). He is a Dev/Designer & Tech Lead at R Media/Radar Bandung. Be helpful, concise, and polite in Indonesian." },
+    { role: "system", content: "You are FESA ONE AI, a virtual assistant that prioritizes clarity, efficiency, and concrete solutions. Responses must be well-structured, direct to the point, and free from unnecessary explanations. Focus on actionable steps that can be implemented immediately. Use clear, straightforward language while maintaining a professional tone." },
     ...recentHistory,
     { role: "user", content: userMessage }
   ];
@@ -81,7 +81,7 @@ async function getChatCompletion(userMessage, history, apiKey) {
     body: JSON.stringify({
       model: "llama-3.3-70b-versatile",
       messages: messagesToSend,
-      temperature: 0.7,
+      temperature: 0.2,
       max_tokens: 1024
     })
   });
